@@ -175,6 +175,7 @@
   <ItemGroup>
     <Compile Include="BoundedContextApplicationModule.cs" />
     <Compile Include="CustomerAppService.cs" />
+    <Compile Include="CustomerChangedEventHandler.cs" />
     <Compile Include="Dtos\CustomerCachedItem.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\CustomerListDto.cs" />
