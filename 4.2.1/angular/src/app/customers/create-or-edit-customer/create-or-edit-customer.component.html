@@ -1,0 +1,51 @@
+﻿<div bsModal #createOrEditCustomerModal="bs-modal" class="modal fade" (onShown)="onShown()" tabindex="-1" role="dialog" aria-labelledby="createCustomerModal" aria-hidden="true" [config]="{backdrop: 'static'}">
+    <div class="modal-dialog">
+
+        <div #modalContent class="modal-content">
+
+            <form *ngIf="active" #createoreditCustomerForm="ngForm" id="frm_create_customer" novalidate (ngSubmit)="save()">
+                <div class="modal-header">
+                    <button type="button" class="close" (click)="close()" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">
+                        <span>Create New Customer</span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                   <div>
+                    <div class="row clearfix" style="margin-top:10px;">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <localized-text #localizedName label="Name" [(json)]="customer.name" required maxlength='128'></localized-text>
+                                    <!-- <input id="name" type="text" name="name" [(ngModel)]="customer.name" required maxlength="32" minlength="2" class="validate form-control"> -->
+                                    <!-- <label for="name" class="form-label">{{Name}}</label> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="age" type="number" name="age" [(ngModel)]="customer.age" required maxlength="32" class="validate form-control">
+                                    <label for="age" class="form-label">{{l("Age")}}</label>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="modal-footer">
+                        <button [disabled]="saving" type="button" class="btn btn-default waves-effect" (click)="close()">
+                            {{l("Cancel")}}
+                        </button>
+                        <button [disabled]="!createoreditCustomerForm.form.valid || saving" type="submit" class="btn btn-primary waves-effect">
+                            {{l("Save")}}
+                        </button>
+                    </div>
+                   </div>
+                </div>               
+            </form>
+        </div>
+    </div>
+</div>
