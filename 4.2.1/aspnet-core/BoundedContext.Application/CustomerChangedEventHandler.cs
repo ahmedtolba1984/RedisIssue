@@ -14,7 +14,7 @@ namespace BoundedContext.Application
     {
         public async Task HandleEventAsync(EntityChangedEventData<Entity<int>> eventData)
         {
-
+            var test = "asdads";
         }
     }
 }
