@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 using Abp.Domain.Entities;
 using Abp.EntityHistory;
 using Abp.Events.Bus.Entities;
+using BoundedContext.Domain.Aggregates;
 
 namespace BoundedContext.Application
 {
-    public class CustomerChangedEventHandler : IAsyncEventHandler<EntityChangedEventData<Entity<int>>>
+    public class CustomerChangedEventHandler : IAsyncEventHandler<EntityChangedEventData<Customer>>
     {
-        public async Task HandleEventAsync(EntityChangedEventData<Entity<int>> eventData)
+        public async Task HandleEventAsync(EntityChangedEventData<Customer> eventData)
         {
             var test = "asdads";
         }
